@@ -1,7 +1,7 @@
 # 代码优化库Zver
 ## 两行代码代替几十上百(无上限)的 if-else 和 switch-case 代码
 ## [项目Github 地址](https://github.com/imythu/Zver)
-
+## [掘金地址](https://juejin.im/post/5d4eefe9f265da03cf7a7db5)
 - 使用 switch-case 或者 if-else
     - ![](https://user-gold-cdn.xitu.io/2019/8/11/16c7ccde8f510452?w=598&h=420&f=png&s=316888)
 - 使用 Zver：
