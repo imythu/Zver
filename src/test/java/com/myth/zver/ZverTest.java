@@ -45,6 +45,12 @@ public class ZverTest {
         Zver stringEnumClassZver = new Zver(MethodCodeing.class, StringEnumClassKey.class, MethodKeyType.STRING);
         // 打印 execute method 4
         stringEnumClassZver.invoke("KEY4");
+        // 参数数量大于实际参数数量，传入 invoke 方法 args 前面 调用方法参数个数个值给调用方法
+        stringEnumClassZver.invoke("KEY4", "djfsakj", 1);
+        // 参数数量小于实际参数数量，返回 null。
+        stringEnumClassZver.invoke("TEST_ARGS");
+        // 正常传参数
+        stringEnumClassZver.invoke("TEST_ARGS", "hello zver");
         // 打印 null
         System.out.println(stringEnumClassZver.invoke("not exits key"));
     }

@@ -11,7 +11,8 @@ import com.myth.zver.interfaces.IEnumMethodKeyGetter;
  */
 public enum  StringEnumClassKey implements IEnumMethodKeyGetter<String> {
 
-    TEST4("KEY4", "key 4");
+    TEST4("KEY4", "key 4"),
+    TEST_ARGS("TEST_ARGS", "test args");
 
     private String key;
     private String value;

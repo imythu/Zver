@@ -9,8 +9,11 @@ package com.myth.zver;
  */
 public class MethodKeyType {
     /**
-     * 方法 key 类型
+     * 方法 key 类型， int 类型
      */
     public static final int INTEGER = 1;
+    /**
+     * 方法 key 类型， string 类型
+     */
     public static final int STRING = 2;
 }

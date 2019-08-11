@@ -36,4 +36,9 @@ public class MethodCodeing {
     public void test4() {
         System.out.println("execute method 4");
     }
+
+    @MethodStringKey(methodKey = "TEST_ARGS")
+    public void testArgs(String string) {
+        System.out.println("execute testArgs and recv string '" + string + "'");
+    }
 }

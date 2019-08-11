@@ -10,10 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static com.myth.zver.MethodKeyType.INTEGER;
 
@@ -25,10 +22,23 @@ import static com.myth.zver.MethodKeyType.INTEGER;
  */
 public class Zver {
 
+    /**
+     * 日志信息打印器
+     */
     private static final LogUtil logger = new LogUtil();
 
+    /**
+     * int 类型 methodKey Map
+     */
     private Map<Integer, Method> intKeyMethodMap;
+    /**
+     * string 类型 methodKey Map
+     */
     private Map<String, Method> stringMethodMap;
+
+    /**
+     * 存储方法的类的实例
+     */
     private Object targetObj;
 
     /**
@@ -176,8 +186,9 @@ public class Zver {
     }
 
     /**
-     * 调用指定 key 的方法。
+     * 调用指定 key 的方法。若传入参数数量大于调用方法参数数量，则将传入参数前面 调用方法参数数量 个参数传给调用的方法。
      * 如果指定 key 的方法不存在，则返回 null。
+     * 如果指定 key 的方法参数数量大于 invoke 参数 args 数量，返回 null 。
      * @param methodKey 方法 key
      * @param args 方法参数
      * @return 方法返回值
@@ -189,15 +200,38 @@ public class Zver {
             logger.serr("cannot find method for key " + methodKey);
             return null;
         }
-        return method.invoke(targetObj, args);
+        if (method.getParameterCount() > args.length ) {
+            return null;
+        }
+        Object[] methodArgs = new Object[method.getParameterCount()];
+        for (int i = 0; i < method.getParameterCount(); i++) {
+            methodArgs[i] = args[i];
+        }
+        return method.invoke(targetObj, methodArgs);
     }
 
+    /**
+     * 调用指定 key 的方法。若传入参数数量大于调用方法参数数量，则将传入参数前面 调用方法参数数量 个参数传给调用的方法。
+     * 如果指定 key 的方法不存在，则返回 null。
+     * 如果指定 key 的方法参数数量大于 invoke 参数 args 数量，返回 null 。
+     * @param methodKey 方法 key
+     * @param args 方法参数
+     * @return 方法返回值
+     * @throws Exception 使用反射调用方法时肯出现的异常
+     */
     public Object invoke(String methodKey, Object... args) throws Exception {
         Method method = stringMethodMap.get(methodKey);
         if (method == null) {
             logger.serr("cannot find method for key " + methodKey);
             return null;
         }
-        return method.invoke(targetObj, args);
+        if (method.getParameterCount() > args.length ) {
+            return null;
+        }
+        Object[] methodArgs = new Object[method.getParameterCount()];
+        for (int i = 0; i < method.getParameterCount(); i++) {
+            methodArgs[i] = args[i];
+        }
+        return method.invoke(targetObj, methodArgs);
     }
 }

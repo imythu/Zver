@@ -1,5 +1,5 @@
 /**
- * description TODO
+ * description 定义项目接口。
  * authorEmail imythu@qq.com
  *
  * @author myth
