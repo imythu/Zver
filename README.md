@@ -1,6 +1,9 @@
 # 代码优化库Zver
 ## 两行代码代替几十上百(无上限)的 if-else 和 switch-case 代码
+
+### 有 bug 或者不足的地方麻烦在评论区告诉我，也不知道这个东西适用性怎么样，，，
 ## [项目Github 地址](https://github.com/imythu/Zver)
+
 ## [掘金地址](https://juejin.im/post/5d4eefe9f265da03cf7a7db5)
 - 使用 switch-case 或者 if-else
     - ![](https://user-gold-cdn.xitu.io/2019/8/11/16c7ccde8f510452?w=598&h=420&f=png&s=316888)
@@ -14,7 +17,7 @@
 代码还不太美观、要写大量的逻辑判断代码、***心情变差***等问题。   
 
 ### *本工具使用方法：*
-1.为你的项目添加依赖。
+1.为你的项目添加依赖。嗯，这个是假的，还没发布出去。。。
    -  maven 方式，在项目中加入以下依赖。
 ```$xslt
         <dependency>
@@ -23,7 +26,7 @@
             <version>1.0-release</version>
         </dependency>
 ``` 
-   - 使用 jar 包方式，[下载 jar 包](https://imyth.top/zver-1.0-release.jar) 并导入到你的项目中。
+   - 使用 jar 包方式，[下载 jar 包](https://imyth.top/zver/zver-1.0-release.jar) 并导入到你的项目中。具体参见[JavaDoc 地址](https://imyth.top/zver/JavaDoc)
    
 2.使用方法介绍。
 
