@@ -207,6 +207,7 @@ public class Zver {
         for (int i = 0; i < method.getParameterCount(); i++) {
             methodArgs[i] = args[i];
         }
+        method.setAccessible(true);
         return method.invoke(targetObj, methodArgs);
     }
 
@@ -232,6 +233,7 @@ public class Zver {
         for (int i = 0; i < method.getParameterCount(); i++) {
             methodArgs[i] = args[i];
         }
+        method.setAccessible(true);
         return method.invoke(targetObj, methodArgs);
     }
 }
