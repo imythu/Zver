@@ -7,7 +7,10 @@
     <groupId>myth</groupId>
     <artifactId>zver</artifactId>
     <version>1.0.0.1-release</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>example</module>
+    </modules>
+    <packaging>pom</packaging>
     <name>zver</name>
     <description>zver</description>
     <url>https://github.com/imythu/Zver.git</url>
