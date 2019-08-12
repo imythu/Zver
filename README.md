@@ -134,7 +134,7 @@
 
 - Zver 具体点的使用方法？
     - 第一，当然是引入依赖了。
-        - 下载 jar 包，下载地址[点击下载](https://imyth.top/zver/zver-1.0-release.jar)。
+        - 下载 jar 包，下载地址[点击下载](https://imyth.top/zver/zver-1.0-release.jar?1.0.0.1)。
         - maven 还没发布，等哪天发布了，下面的就可以在 maven 中用了。<br/>
             如果实在要用 maven 的话，一种方式是去 GitHub 上把源码下下来本地执行``` mvn clean install -Dmaven.test.skip=true ```安装到本地仓库就可以了。
             ```

@@ -6,7 +6,7 @@
 
     <groupId>myth</groupId>
     <artifactId>zver</artifactId>
-    <version>1.0-release</version>
+    <version>1.0.0.1-release</version>
     <packaging>jar</packaging>
     <name>zver</name>
     <description>zver</description>
