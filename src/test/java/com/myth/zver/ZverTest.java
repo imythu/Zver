@@ -1,6 +1,7 @@
 package com.myth.zver;
 
 
+import com.myth.zver.util.LogUtil;
 import org.junit.Test;
 
 /**
@@ -55,4 +56,10 @@ public class ZverTest {
         System.out.println(stringEnumClassZver.invoke("not exits key"));
     }
 
+    @Test
+    public void testInterfaceConstant() throws Exception {
+        LogUtil.openInfoPrint();
+        Zver zver = new Zver(MethodCodeing.class, InterfaceConstant.class, MethodKeyType.INTEGER);
+        System.out.println(zver.invoke(1));
+    }
 }

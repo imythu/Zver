@@ -158,15 +158,26 @@ public class Zver {
             }
             return keys;
         }
-
-        logger.serr("key class is general class.");
         // 定义 keys 的类是普通类
         Object keyClassInstance = null;
         try {
             keyClassInstance = keyClass.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
+        } catch (InstantiationException e) {
+            logger.serr("class is an interface. Try to resolve by interface.");
+
+            for (Field field : keyClass.getFields()) {
+                try {
+                    keys.add(field.getInt(field.getName()));
+                } catch (IllegalAccessException ex) {
+                    logger.serr(e.toString());
+                }
+            }
+
+        } catch (IllegalAccessException e) {
             logger.serr(e.toString());
         }
+        logger.serr("key class is general class.");
+
         if (keyClassInstance == null) {
             return keys;
         }
